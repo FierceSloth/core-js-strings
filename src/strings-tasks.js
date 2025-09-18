@@ -190,8 +190,11 @@ function removeLastOccurrences(str, value) {
  *   sumOfCodes('') => 0
  *   sumOfCodes() => 0
  */
-function sumOfCodes(/* str */) {
-  throw new Error('Not implemented');
+function sumOfCodes(str) {
+  if (typeof str !== 'string' || str === '') return 0;
+  const strArr = str.split('');
+  const result = strArr.reduce((sum, current) => sum + current.charCodeAt(), 0);
+  return result;
 }
 
 /**
@@ -205,8 +208,9 @@ function sumOfCodes(/* str */) {
  *   startsWith('Hello World', 'World') => false
  *   startsWith('Hello World', 'Hello') => true
  */
-function startsWith(/* str, substr */) {
-  throw new Error('Not implemented');
+function startsWith(str, substr) {
+  if (typeof str !== 'string') return false;
+  return str.startsWith(substr);
 }
 
 /**
@@ -220,8 +224,9 @@ function startsWith(/* str, substr */) {
  *   endsWith('Hello World', 'World') => true
  *   endsWith('Hello World', 'Hello') => false
  */
-function endsWith(/* str, substr */) {
-  throw new Error('Not implemented');
+function endsWith(str, substr) {
+  if (typeof str !== 'string') return false;
+  return str.endsWith(substr);
 }
 
 /**
